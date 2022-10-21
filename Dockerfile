@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 FROM keymetrics/pm2:latest-alpine
-RUN pm2 start
+# RUN pm2 start
 
 EXPOSE 3001
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["pm2-runtime", "index.js"]
