@@ -9,6 +9,7 @@ RUN npm install
 
 # Copy rest of the files
 COPY . .
+RUN pm2 start index.js
 
 EXPOSE 3001
 ENTRYPOINT ["node", "index.js"]
