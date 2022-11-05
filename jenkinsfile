@@ -3,8 +3,8 @@ pipeline {
     environment {
         registry = "dalinourn/shoptest_backend"
         registryCredential = 'docker_id'
-        TELEGRAM_TOKEN=registryCredential('TOKEN')
-        CHAT_ID = registryCredential('secret_text')
+        TELEGRAM_TOKEN=credentials('TOKEN')
+        CHAT_ID = credentials('secret_text')
         dockerImage = ''
     }
 
@@ -56,7 +56,7 @@ pipeline {
         }
     }
 
-     post{
+    post{
     success{
 
         sh ''' 
