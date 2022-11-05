@@ -11,4 +11,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3001
-ENTRYPOINT ["", "index.js"]
+ENTRYPOINT ["node", "index.js"]

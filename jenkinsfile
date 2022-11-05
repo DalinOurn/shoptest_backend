@@ -60,12 +60,12 @@ pipeline {
     success{
 
         sh ''' 
-        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode="HTML" -d text="<b>Stage</b> : JENKINS POS \n<b>Status</b> : <i>Success</i> \n<b>Version</b>: ${BUILD_NUMBER} <b> \nEnvironment </b> : Development"
+        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode="HTML" -d text="<b>Stage</b> : JENKINS Build \n<b>Status</b> : <i>Success</i> \n<b>Version</b>: ${BUILD_NUMBER} <b> \nWebsite </b> : Shopreview Backend"
         '''
     }
     failure{
         sh ''' 
-        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode="HTML" -d text="<b>Stage</b> : JENKINS POS \n<b>Status</b> : <i>Failed</i> \n<b>Version</b>: ${BUILD_NUMBER} <b> \nEnvironment </b> : Development"
+        curl -s -X POST https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d parse_mode="HTML" -d text="<b>Stage</b> : JENKINS Build \n<b>Status</b> : <i>Failed</i> \n<b>Version</b>: ${BUILD_NUMBER} <b> \nWebsite </b> : Shopreview Backend"
         '''
     }
     }
