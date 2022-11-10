@@ -60,7 +60,7 @@ router.post(
                 req.session.jwt = result.data.token
                 res.json({ success: true, data: result.data })
             } else {
-                res.json({ success: false, error: 'user not admin' })
+                res.json({ success: false, error: 'User not admin' })
             }
         } catch (err) {
             res.json({ success: false, error: err })
