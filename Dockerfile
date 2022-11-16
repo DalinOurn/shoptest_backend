@@ -10,5 +10,5 @@ RUN npm install
 # Copy rest of the files
 COPY . .
 
-EXPOSE 3001
+# EXPOSE 3001
 ENTRYPOINT ["node", "index.js"]
