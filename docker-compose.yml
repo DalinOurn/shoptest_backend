@@ -1,5 +1,5 @@
 services:
-  api:
+  backendContainer:
     container_name: backendContainer
     image: 'dalinourn/shoptest_backend:$BUILD_NUMBER'
     ports:
