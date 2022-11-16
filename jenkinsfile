@@ -30,7 +30,14 @@ pipeline {
                 }
             }
         }
-
+        stage('docker compose container') {
+            steps {
+                // sh 'docker ps -f name=backendContainer -q | xargs --no-run-if-empty docker container stop'
+                // sh 'docker container ls -a -fname=backendContainer -q | xargs -r docker container rm'
+                sh 'docker compose up -d'
+            }
+        }
+        
         stage('Deploy Image') {
             steps{
                 script {
@@ -40,20 +47,17 @@ pipeline {
                 }
             }
         }
-        stage('docker stop container') {
-        steps {
-            sh 'docker ps -f name=backendContainer -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=backendContainer -q | xargs -r docker container rm'
-        }
-    }
 
-        stage('Docker Run') {
-            steps{
-                script {
-                    dockerImage.run("-p 3001:3001 --rm --name backendContainer")
-                }
-            }
-        }
+
+        // stage('Docker Run') {
+        //     steps{
+        //         script {
+        //             dockerImage.run("-p 3001:3001 --rm --name backendContainer")
+        //         }
+        //     }
+        // }
+
+        
     }
 
     post{

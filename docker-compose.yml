@@ -1,0 +1,8 @@
+services:
+  api:
+    container_name: backendContainer
+    image: 'dalinourn/shoptest_backend:$BUILD_NUMBER'
+    ports:
+      - "3001:3001"
+    
+    restart: "always"
