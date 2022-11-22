@@ -10,7 +10,7 @@ pipeline {
 
     stages {
 
-        stage('git clone frontend') {
+        stage('git clone backend') {
             steps {
                 git 'https://github.com/DalinOurn/shoptest_backend.git'
 
